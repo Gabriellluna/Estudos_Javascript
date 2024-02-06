@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 003</title>
+    <style>
+        h1, p{
+            font-family: Arial, Helvetica, sans-serif;
+            color: blueviolet;
+        }
+        body{
+            background-color:aquamarine;/*jbyb*/
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá Mundo!!!</h1> <!--vrrrrv-->
+    <p>Já nn existe mais maldição do Olá Mundo</p> 
+    <script>
+       var n1 = Number.parseFloat(window.prompt ("Digite um número:")) //O retorno é String 
+       var n2 = window.prompt ("Digite outro  número:") //O retorno é String
+       var soma = n1 + Number.parseFloat(n2) //Por conta do retorno ser String. ele entende o operador + como concatenação
+       //Ex: se eu puser 5 + 4, ele vai dizer que o valor da variável soma é 54, e não 9
+       //logo devemos transformar String em number para que ele realize a operação matemática 
+       window.alert ("A soma de " + n1+ " e " + n2+  " é : " + soma.toFixed(2).replace('.',','))
+       //Fiz a conversão em 2 lugares diferentes,um no momento que o usuário digita e o outro na hora da soma
+    </script>
+</body>
+</html>

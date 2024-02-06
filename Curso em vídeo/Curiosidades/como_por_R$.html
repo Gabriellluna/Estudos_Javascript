@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var valor;// adicionei essa linha só por desencargo de conciência, se for deletada nn faz falta 
+
+        /*O parâmetro "valor" na função formatarParaReais(valor) é do tipo string. 
+        Quando você passa um valor para essa função, ele é inicialmente tratado como uma string.
+         Em seguida, é convertido para um número de ponto flutuante (float) usando parseFloat(valor) 
+         para que possa ser manipulado para adicionar a formatação de reais.
+        */
+       
+        function formatarParaReais(valor) {
+            // Arredonda o valor para duas casas decimais
+            var valorFormatado = parseFloat(valor).toFixed(2);
+
+            // Adiciona o símbolo "R$" antes do valor formatado
+            valorFormatado = "R$" + valorFormatado.replace('.', ',');
+
+            // Verifica se o valor é maior ou igual a 1000 para inserir o ponto separando as centenas
+            if (parseFloat(valor) >= 1000) {
+                valorFormatado = valorFormatado.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                return valorFormatado
+            }else{
+
+            return valorFormatado;
+        }
+    }
+    
+        var sal = window.prompt("Qual é seu salário?");
+        var salFormatado = formatarParaReais(sal);
+        
+        window.alert("Seu salário é de: " + salFormatado);
+        window.alert("Está funcionando perfeitamente");
+        
+    </script>
+</body>
+</html>
